@@ -13,7 +13,14 @@ function getWeather(lat, lng) {
     .then(function (json) {
       const temp = json.main.temp;
       const place = json.name;
-      weatherContent.innerText = `${temp} @ ${place}`;
+      const placeSpan = document.createElement("span");
+      const tempSpan = document.createElement("span");
+      tempSpan.innerText = `온도 : ${temp}`;
+      tempSpan.className = "css__temp";
+      placeSpan.innerText = `장소 : ${place}`;
+      placeSpan.className = "css__place";
+      weatherContent.appendChild(tempSpan);
+      weatherContent.appendChild(placeSpan);
     });
 }
 

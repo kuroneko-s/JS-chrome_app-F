@@ -32,6 +32,7 @@ function loadName() {
   if (!currentUser) {
     askForName();
   } else {
+    input.style.display = `none`;
     paintGreeting(currentUser);
   }
 }
